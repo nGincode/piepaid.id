@@ -1,3 +1,9 @@
+<?php
+include('koneksi.php');
+
+$plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +11,7 @@
 	<meta charset="UTF-8">
 	<meta name="keywords" content="POS Free, POS, Kasir">
 	<meta name="description" content="Kasir Termurah">
+	<meta name="google-site-verification" content="4XGtLaf8lOW8c0dqtEyYPrGoXKCB1HyvGe2vIMVK_Mw" />
 	<meta property="og:site_name" content="Piepaid">
 	<meta property="og:url" content="https://piepaid.id/">
 	<meta property="og:type" content="website">
@@ -520,7 +527,7 @@
 				<div class="row">
 					<div class="col-xxl-7 col-xl-8 col-lg-7 col-md-9 m-auto">
 						<div class="title-style-one text-center">
-							<h2 class="main-title">Harga Plans Kami Jika Tanpa Diskon</h2>
+							<h2 class="main-title">Harga Plans Kami Termurah Dikelasnya</h2>
 						</div> <!-- /.title-style-one -->
 					</div>
 				</div>
@@ -540,87 +547,70 @@
 					<div class="tab-content">
 						<div class="tab-pane active show" id="month">
 							<div class="row gx-xxl-5">
-								<div class="col-md-6">
-									<div class="pr-table-wrapper active md-mb-30">
-										<div class="pack-name">Business</div>
-										<div class="pack-details">For individuals and teams. Get <span>1 year <br> premium market access</span></div>
-										<div class="top-banner d-sm-flex justify-content-center align-items-center">
-											<div class="price"><sup>$</sup>75</div>
-											<div>
-												<span>Monthly membership</span>
-												<em>Starting at $75/mo with </em>
-											</div>
-										</div> <!-- /.top-banner -->
-										<ul class="pr-feature style-none">
-											<li>Unlimited campaigns</li>
-											<li>Push Notifications</li>
-											<li>Team fundraising</li>
-										</ul>
-										<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
-									</div> <!-- /.pr-table-wrapper -->
-								</div>
-								<div class="col-md-6">
-									<div class="pr-table-wrapper">
-										<div class="pack-name">Agency</div>
-										<div class="pack-details">For big agency & teams. Get <span>1 year <br> premium market access</span></div>
-										<div class="top-banner d-sm-flex justify-content-center align-items-center">
-											<div class="price"><sup>$</sup>99</div>
-											<div>
-												<span>Monthly membership</span>
-												<em>Starting at $99/mo with </em>
-											</div>
-										</div> <!-- /.top-banner -->
-										<ul class="pr-feature style-none">
-											<li>Unlimited campaigns</li>
-											<li>Push Notifications</li>
-											<li>Team fundraising</li>
-										</ul>
-										<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
-									</div> <!-- /.pr-table-wrapper -->
-								</div>
+
+								<?php
+
+								while ($value = mysqli_fetch_array($plans_paket)) {
+									if ($value['id'] != 1 && $value['id'] < 4) {
+								?>
+										<div class="col-md-6">
+											<div class="pr-table-wrapper active md-mb-30">
+												<div class="pack-name"><?= $value['nama'] ?></div>
+												<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $value['waktu'] . ' ' . $value['waktu_satuan'] ?></span></div>
+												<div class="top-banner d-sm-flex justify-content-center align-items-center">
+													<div class="price"><sup>Rp. </sup><?= substr($value['harga'], 0, -3) ?>k</div>
+													<div>
+														<span>Membership 1 Bulan</span>
+														<em>Mulai dari <?= substr($value['harga'], 0, -3) ?>k/bulan dapatkan </em>
+													</div>
+												</div> <!-- /.top-banner -->
+												<ul class="pr-feature style-none">
+													<?php
+													$fitur = json_decode($value['ket'], true);
+													foreach ($fitur as $v) {
+													?>
+														<li><?= $v ?></li>
+													<?php
+													} ?>
+												</ul>
+												<a href="pricing.html" class="trial-button"> <span>Pilih Plans <i class="fas fa-chevron-right"></i></span> </a>
+											</div> <!-- /.pr-table-wrapper -->
+										</div>
+								<?php }
+								} ?>
 							</div>
 						</div>
 
 						<div class="tab-pane" id="year">
 							<div class="row gx-xxl-5">
-								<div class="col-md-6">
-									<div class="pr-table-wrapper active md-mb-30">
-										<div class="pack-name">Business</div>
-										<div class="pack-details">For individuals and teams. Get <span>2 year <br> premium market access</span></div>
-										<div class="top-banner d-sm-flex justify-content-center align-items-center">
-											<div class="price"><sup>$</sup>69</div>
-											<div>
-												<span>Yearly membership</span>
-												<em>Starting at $69/mo with </em>
-											</div>
-										</div> <!-- /.top-banner -->
-										<ul class="pr-feature style-none">
-											<li>Unlimited campaigns</li>
-											<li>Push Notifications</li>
-											<li>Team fundraising</li>
-										</ul>
-										<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
-									</div> <!-- /.pr-table-wrapper -->
-								</div>
-								<div class="col-md-6">
-									<div class="pr-table-wrapper">
-										<div class="pack-name">Agency</div>
-										<div class="pack-details">For big agency & teams. Get <span>2 year <br> premium market access</span></div>
-										<div class="top-banner d-sm-flex justify-content-center align-items-center">
-											<div class="price"><sup>$</sup>97</div>
-											<div>
-												<span>Yearly membership</span>
-												<em>Starting at $97/mo with </em>
-											</div>
-										</div> <!-- /.top-banner -->
-										<ul class="pr-feature style-none">
-											<li>Unlimited campaigns</li>
-											<li>Push Notifications</li>
-											<li>Team fundraising</li>
-										</ul>
-										<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
-									</div> <!-- /.pr-table-wrapper -->
-								</div>
+
+								<?php
+
+								print_r($value1 = mysqli_fetch_assoc($plans_paket));
+								while ($value1 = mysqli_fetch_assoc($plans_paket)) {
+									if ($value1['id'] != 1 && $value1['id'] < 4) {
+								?>
+										<div class="col-md-6">
+											<div class="pr-table-wrapper active md-mb-30">
+												<div class="pack-name">Business</div>
+												<div class="pack-details">For individuals and teams. Get <span>2 year <br> premium market access</span></div>
+												<div class="top-banner d-sm-flex justify-content-center align-items-center">
+													<div class="price"><sup>$</sup>69</div>
+													<div>
+														<span>Yearly membership</span>
+														<em>Starting at $69/mo with </em>
+													</div>
+												</div> <!-- /.top-banner -->
+												<ul class="pr-feature style-none">
+													<li>Unlimited campaigns</li>
+													<li>Push Notifications</li>
+													<li>Team fundraising</li>
+												</ul>
+												<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
+											</div> <!-- /.pr-table-wrapper -->
+										</div>
+								<?php }
+								} ?>
 							</div>
 						</div>
 					</div> <!-- /.tab-content -->
