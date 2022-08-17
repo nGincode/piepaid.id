@@ -853,6 +853,14 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 				background-color: #000000;
 			}
 
+			.navbar-toggler {
+				background-color: #ffd7008a;
+			}
+
+			.navbar .dropdown-toggle::after {
+				background: unset;
+			}
+
 			.hero-banner-one .illustration-holder .bg-shape {
 				top: 0;
 			}
