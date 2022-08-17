@@ -232,7 +232,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 			</div> <!-- /.container -->
 			<div class="illustration-holder">
 				<img src="images/assets/ils_01.svg" alt="" class="main-illustration ms-auto">
-				<img src="images/assets/bg_01.png" alt="" class="shapes bg-shape">
+				<!-- <img src="images/assets/bg_01.png" alt="" class="shapes bg-shape"> -->
 				<img src="images/assets/ils_01_1.svg" alt="" class="shapes shape-one">
 				<img src="images/assets/ils_01_2.svg" alt="" class="shapes shape-two">
 				<img src="images/assets/ils_01_3.svg" alt="" class="shapes shape-three">
@@ -582,7 +582,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 									<div class="col-md-3">
 										<div class="pr-table-wrapper active md-mb-30">
 											<div class="pack-name"><?= $value['nama'] ?></div>
-											<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $waktusatuan  ?></span></div>
+											<div class="pack-details"><?= $value['info'] ?> <br><span> <?= $waktusatuan  ?></span></div>
 											<div class="top-banner d-sm-flex justify-content-center align-items-center">
 												<div class="price" style="font-size: 30px;"><sup style="font-size: 10px;">Rp. </sup><?= $harga ? $harga : 0 ?>k</div>
 												<div>
@@ -638,8 +638,8 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 								?>
 										<div class="col-md-4">
 											<div class="pr-table-wrapper md-mb-30">
-												<div class="pack-name"><?= $value['nama'] ?></div>
-												<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $waktusatuan  ?></span></div>
+												<div class="pack-name"><?= $value['nama'] ?></div><br>
+												<div class="pack-details"><?= $value['info'] ?> <br><span> <?= $waktusatuan  ?></span></div>
 												<div class="top-banner d-sm-flex justify-content-center align-items-center">
 													<div class="price" style="font-size: 35px;"><sup style="font-size: 10px;">Rp. </sup><small style="text-decoration: line-through;font-size: 20px;"><?= $harga ? $harga : 0 ?>k </small> <sup style="font-size: 10px;"> &nbsp;<?= $jdis ? '-' . $jdis . '%' : '' ?> </sup><br><sup style="font-size: 10px;">Rp. </sup><?= $disc ?>k
 													</div>
@@ -752,7 +752,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 					</div>
 				</div>
 			</div>
-			<img src="images/assets/bg_05.svg" alt="" class="shapes shape-one">
+			<!-- <img src="images/assets/bg_05.svg" alt="" class="shapes shape-one"> -->
 			<img src="images/shape/shape_01.svg" alt="" class="shapes shape-two">
 			<img src="images/shape/shape_02.svg" alt="" class="shapes shape-three">
 			<img src="images/shape/shape_02.svg" alt="" class="shapes shape-four">
@@ -854,7 +854,11 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 		<style>
 			body {
-				background-color: #000000;
+				background-color: #1c152a;
+			}
+
+			.theme-main-menu.sticky-menu.fixed {
+				background-color: #2f2a3b;
 			}
 
 			.navbar-toggler {
@@ -906,16 +910,25 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 				color: #1c152a
 			}
 
+			.pricing-table-area-one:before {
+				background: url('images/assets/bg_04.svg') no-repeat center;
+			}
+
 			.portfolio-block-one .title {
-				background-color: #ffd7008a;
+				background-color: #9c8300;
 			}
 
 			.portfolio-block-one:before {
-				background: linear-gradient(180deg, rgba(24, 52, 123, 0) 0%, rgba(48, 46, 160, 0.08) 56.67%, #6b7500 100%);
+				background: linear-gradient(180deg, rgba(24, 52, 123, 0) 0%, rgba(48, 46, 160, 0.08) 56.67%, #1c152a 100%);
 			}
 
 			.address-section-one .inner-content {
 				background-color: #ffd7008a;
+			}
+
+			.footer-style-one {
+				/* background: url('images/assets/bg_04.svg') no-repeat center; */
+
 			}
 		</style>
 	</div> <!-- /.main-page-wrapper -->
