@@ -221,7 +221,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-md-7">
-						<a href="pricing.html" class="slogan"><strong>Offer</strong> Mulai dari 50k/bulan. <i class="fas fa-chevron-right"></i></a>
+						<a href="/" class="slogan"><strong>Offer</strong> Mulai dari 50k/bulan. <i class="fas fa-chevron-right"></i></a>
 						<h1 class="hero-heading"> WebApp Kasir Terbaik <?= date('Y') ?></h1>
 						<p class="text-lg mb-60 lg-mb-40">Lebih Cepat, Mudah, dan Praktis</p>
 						<ul class="style-none button-group d-lg-flex align-items-center">
@@ -479,7 +479,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="item">
 							<div class="portfolio-block-one">
 								<div class="img-meta"><img src="images/gallery/img_01.jpg" alt="" class="w-100"></div>
-								<a href="portfolio-details-V1.html" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+								<a href="/" class="title tran3s d-flex flex-column justify-content-center align-items-center">
 									<span class="tag">Steak, Cafe</span>
 									<span class="pj-name">Warung Steak Bengkulu</span>
 								</a>
@@ -490,7 +490,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="item">
 							<div class="portfolio-block-one">
 								<div class="img-meta"><img src="images/gallery/img_02.jpg" alt="" class="w-100"></div>
-								<a href="portfolio-details-V1.html" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+								<a href="/" class="title tran3s d-flex flex-column justify-content-center align-items-center">
 									<span class="tag">Japan Food</span>
 									<span class="pj-name">Japan Kitchin</span>
 								</a>
@@ -501,7 +501,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="item">
 							<div class="portfolio-block-one">
 								<div class="img-meta"><img src="images/gallery/img_03.jpg" alt="" class="w-100"></div>
-								<a href="portfolio-details-V1.html" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+								<a href="/" class="title tran3s d-flex flex-column justify-content-center align-items-center">
 									<span class="tag">Cafe, Dessert</span>
 									<span class="pj-name">Snack On Child</span>
 								</a>
@@ -512,7 +512,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="item">
 							<div class="portfolio-block-one">
 								<div class="img-meta"><img src="images/gallery/img_04.jpg" alt="" class="w-100"></div>
-								<a href="portfolio-details-V1.html" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+								<a href="/" class="title tran3s d-flex flex-column justify-content-center align-items-center">
 									<span class="tag">Tembikar Food</span>
 									<span class="pj-name">Ayam Coek Bengkulu</span>
 								</a>
@@ -523,7 +523,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="item">
 							<div class="portfolio-block-one">
 								<div class="img-meta"><img src="images/gallery/img_05.jpg" alt="" class="w-100"></div>
-								<a href="portfolio-details-V1.html" class="title tran3s d-flex flex-column justify-content-center align-items-center">
+								<a href="/" class="title tran3s d-flex flex-column justify-content-center align-items-center">
 									<span class="tag">Ramen, Japan Food</span>
 									<span class="pj-name">Ramen Shoba</span>
 								</a>
@@ -767,7 +767,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 				<div class="inner-wrapper">
 					<div class="row">
 						<div class="col-lg-3 footer-intro mb-40">
-							<div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt="" width="130"></a></div>
+							<div class="logo"><a href="/"><img src="images/logo/logo.png" alt="" width="130"></a></div>
 							<p>Piepaid Corporation <?= date('Y') ?>.</p>
 							<ul class="d-flex social-icon style-none">
 								<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
