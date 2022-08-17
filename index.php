@@ -926,10 +926,10 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 				background-color: #ffd7008a;
 			}
 
-			.footer-style-one {
-				/* background: url('images/assets/bg_04.svg') no-repeat center; */
+			/* .footer-style-one {
+				background: url('images/assets/bg_04.svg') no-repeat center;
 
-			}
+			} */
 		</style>
 	</div> <!-- /.main-page-wrapper -->
 </body>
