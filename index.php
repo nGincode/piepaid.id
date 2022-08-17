@@ -195,7 +195,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 									</ul>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="contact-us.html" role="button">Contact</a>
+									<a class="nav-link" href="/" role="button">Contact</a>
 								</li>
 							</ul>
 							<!-- Mobile Content -->
@@ -671,114 +671,6 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 
 
-		<!--
-			=====================================================
-				Feedback Slider One
-			=====================================================
-			-->
-		<div class="feedback-section-one mt-130 lg-mt-100">
-			<div class="container">
-				<div class="title-style-one text-center" data-aos="fade-up">
-					<div class="sc-title">TESTIMONIALS</div>
-					<h2 class="main-title">Owner Dari Pelanggan Kami</h2>
-				</div> <!-- /.title-style-one -->
-			</div> <!-- /.container -->
-			<div class="inner-content mt-150 lg-mt-80">
-				<div class="slider-wrapper">
-					<div class="feedback_slider_one">
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="top-header d-flex align-items-center justify-content-between">
-									<div>
-										<img src="images/logo/Plogo-1.png" alt="">
-										<ul class="style-none d-flex rating pt-15">
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-										</ul>
-									</div>
-									<img src="images/icon/icon_05.svg" alt="" width="50">
-								</div> <!-- /.top-header -->
-								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="cost"><span>Qulaity & Cost:</span> 5.00</div>
-									<img src="images/logo/Plogo-5.png" alt="">
-								</div>
-							</div> <!-- /.feedback-block-one -->
-						</div>
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="top-header d-flex align-items-center justify-content-between">
-									<div>
-										<img src="images/logo/Plogo-2.png" alt="">
-										<ul class="style-none d-flex rating pt-15">
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-										</ul>
-									</div>
-									<img src="images/icon/icon_05.svg" alt="" width="50">
-								</div> <!-- /.top-header -->
-								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="cost"><span>Qulaity & Cost:</span> 35.00</div>
-									<img src="images/logo/Plogo-5.png" alt="">
-								</div>
-							</div> <!-- /.feedback-block-one -->
-						</div>
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="top-header d-flex align-items-center justify-content-between">
-									<div>
-										<img src="images/logo/Plogo-3.png" alt="">
-										<ul class="style-none d-flex rating pt-15">
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-										</ul>
-									</div>
-									<img src="images/icon/icon_05.svg" alt="" width="50">
-								</div> <!-- /.top-header -->
-								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="cost"><span>Qulaity & Cost:</span> 19.00</div>
-									<img src="images/logo/Plogo-5.png" alt="">
-								</div>
-							</div> <!-- /.feedback-block-one -->
-						</div>
-						<div class="item">
-							<div class="feedback-block-one">
-								<div class="top-header d-flex align-items-center justify-content-between">
-									<div>
-										<img src="images/logo/Plogo-4.png" alt="">
-										<ul class="style-none d-flex rating pt-15">
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-											<li><i class="bi bi-star-fill"></i></li>
-										</ul>
-									</div>
-									<img src="images/icon/icon_05.svg" alt="" width="50">
-								</div> <!-- /.top-header -->
-								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
-								<div class="d-flex align-items-center justify-content-between">
-									<div class="cost"><span>Qulaity & Cost:</span> 15.00</div>
-									<img src="images/logo/Plogo-5.png" alt="">
-								</div>
-							</div> <!-- /.feedback-block-one -->
-						</div>
-					</div> <!-- /.feedback_slider_one -->
-				</div> <!-- /.slider-wrapper -->
-			</div> <!-- /.inner-content -->
-		</div> <!-- /.feedback-section-one -->
-
 
 
 		<!--
@@ -829,7 +721,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 							<div class="sc-title">Masih Pakai Transaksi Manual?</div>
 							<h2 class="main-title">Gabung Bersama Kami, Rasakan Sendiri Kemudahannya</h2>
 						</div> <!-- /.title-style-one -->
-						<div class="text-center" data-aos="fade-up" data-aos-delay="150"><a href="contact-us.html" class="btn-four ripple-btn">Mulai <i class="fas fa-chevron-right"></i></a></div>
+						<div class="text-center" data-aos="fade-up" data-aos-delay="150"><a href="/" class="btn-four ripple-btn">Mulai <i class="fas fa-chevron-right"></i></a></div>
 					</div>
 				</div>
 
