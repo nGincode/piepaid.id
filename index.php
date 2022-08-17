@@ -665,7 +665,6 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						</div>
 					</div> <!-- /.tab-content -->
 
-					<div class="msg-note mt-80 lg-mt-50" data-aos="fade-up">If you Need any Custom or others Pricing System. <br> Please <a href="contact-us.html">Send Message</a></div>
 				</div>
 			</div> <!-- /.pricing-table-area-one -->
 		</div><!-- /.pricing-section-one -->
@@ -956,6 +955,61 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 		<!-- Theme js -->
 		<script src="js/theme.js"></script>
+
+		<style>
+			body {
+				background-color: #000000;
+			}
+
+			.hero-banner-one .illustration-holder .bg-shape {
+				top: 0;
+			}
+
+			body .btn-one {
+				background-color: #ffd7008a;
+			}
+
+			.block-style-one {
+				background-color: #ffd7008a;
+			}
+
+			.counter-section-one .inner-container {
+				background-color: #9c8300;
+			}
+
+			.fancy-feature-three {
+				background-color: #1c152a;
+			}
+
+			.block-style-three {
+				background-color: #9c8300;
+			}
+
+			.block-style-three .numb {
+				background-color: #1c152a;
+			}
+
+			.pricing-section-one {
+				background-color: #1c152a;
+				padding-top: 50px;
+			}
+
+			.pricing-table-area-one .pr-table-wrapper {
+				background-color: #9c8300
+			}
+
+			.pricing-table-area-one .top-banner .price {
+				color: #1c152a
+			}
+
+			.portfolio-block-one .title {
+				background-color: #ffd7008a;
+			}
+
+			.portfolio-block-one:before {
+				background: linear-gradient(180deg, rgba(24, 52, 123, 0) 0%, rgba(48, 46, 160, 0.08) 56.67%, #6b7500 100%);
+			}
+		</style>
 	</div> <!-- /.main-page-wrapper -->
 </body>
 
