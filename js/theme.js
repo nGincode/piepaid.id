@@ -76,7 +76,6 @@
 
           });
         }
-        
 
 // ------------------------ Service Slider One
         if($(".service_slider_one").length) {

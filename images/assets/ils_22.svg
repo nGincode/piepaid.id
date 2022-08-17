@@ -1,8 +1,8 @@
 <svg width="1080" height="1099" viewBox="0 0 1080 1099" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_664_2)">
-<circle cx="472.5" cy="531.5" r="307.5" fill="#A279F8"/>
+<g filter="url(#filter0_f_703_2)">
+<circle cx="472.5" cy="531.5" r="307.5" fill="#5331B0"/>
 </g>
-<g clip-path="url(#clip0_664_2)">
+<g clip-path="url(#clip0_703_2)">
 <path d="M129.257 930.842C114.28 933.544 95.3285 941.523 97.0821 956.581C98.8356 971.316 118.269 975.032 133.102 974.952L389.07 973.649C405.496 973.552 422.372 973.391 437.59 967.214C452.809 961.037 466.226 947.475 467.111 931.083C469.83 880.055 347.211 904.797 318.559 906.953C255.08 911.556 191.89 919.53 129.257 930.842Z" fill="#AC6CFF"/>
 <path d="M442.367 254.452C443.767 255.434 453.339 261.531 456.717 268.126C458.97 272.502 446.534 277.087 446.534 277.087L442.367 254.452Z" fill="#FF8178"/>
 <path d="M383.84 307.427L376.488 323.095C382.934 329.716 389.865 335.847 397.225 341.434C400.125 343.326 402.646 345.743 404.658 348.561C410.734 338.895 416.251 328.889 421.179 318.591L383.84 307.427Z" fill="#FFB6AD"/>
@@ -70,12 +70,12 @@
 <circle cx="598.5" cy="857.5" r="7.5" fill="#AF89FF" fill-opacity="0.51"/>
 </g>
 <defs>
-<filter id="filter0_f_664_2" x="-135" y="-76" width="1215" height="1215" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_703_2" x="-135" y="-76" width="1215" height="1215" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_664_2"/>
+<feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_703_2"/>
 </filter>
-<clipPath id="clip0_664_2">
+<clipPath id="clip0_703_2">
 <rect width="725" height="751" fill="white" transform="translate(97 224)"/>
 </clipPath>
 </defs>

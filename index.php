@@ -1,9 +1,13 @@
 <?php
 include('koneksi.php');
 
-$plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
+$plans_paket = mysqli_query($db1, 'SELECT * FROM plans_paket');
+$plans_paket1 = mysqli_query($db1, 'SELECT * FROM plans_paket');
+$users = mysqli_query($db1, 'SELECT * FROM users');
+$transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +89,7 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 				Search
 			============================================== 
 			-->
-		<div class="offcanvas offcanvas-top theme-search-form justify-content-center" tabindex="-1" id="offcanvasTop">
+		<div class="offcanvas offcanvas-top theme-search-form bg-three justify-content-center" tabindex="-1" id="offcanvasTop">
 			<button type="button" class="close-btn tran3s" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-lg"></i></button>
 			<div class="form-wrapper">
 				<form action="#">
@@ -117,72 +121,82 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 						<div class="collapse navbar-collapse" id="navbarNav">
 							<ul class="navbar-nav">
 								<li class="d-block d-lg-none">
-									<div class="logo"><a href="index.html"><img src="images/logo/logo_01.png" alt="" width="130"></a></div>
+									<div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt="" width="130"></a></div>
 								</li>
-								<!-- <li class="nav-item active dropdown">
+								<li class="nav-item active dropdown">
 									<a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Home</a>
 
 								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Pages</a>
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Apps</a>
 									<ul class="dropdown-menu">
-										<li class="dropdown-submenu dropdown">
-											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>About Us</span></a>
-											<ul class="dropdown-menu">
-												<li><a href="about-us1.html" class="dropdown-item"><span>About Us One</span></a></li>
-												<li><a href="about-us2.html" class="dropdown-item"><span>About Us Two</span></a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu dropdown">
-											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Services</span></a>
-											<ul class="dropdown-menu">
-												<li><a href="service-V1.html" class="dropdown-item"><span>Service One</span></a></li>
-												<li><a href="service-V2.html" class="dropdown-item"><span>Service Two</span></a></li>
-												<li><a href="service-details-V1.html" class="dropdown-item"><span>Service Details</span></a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu dropdown">
-											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Our Team</span></a>
-											<ul class="dropdown-menu">
-												<li><a href="team.html" class="dropdown-item"><span>Team Member</span></a></li>
-												<li><a href="team-details.html" class="dropdown-item"><span>Team Details</span></a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu dropdown">
-											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Other Pages</span></a>
-											<ul class="dropdown-menu">
-												<li><a href="faq.html" class="dropdown-item"><span>Faq</span></a></li>
-												<li><a href="signin.html" class="dropdown-item"><span>Signin</span></a></li>
-												<li><a href="sign-up.html" class="dropdown-item"><span>Signup</span></a></li>
-												<li><a href="404.html" class="dropdown-item"><span>404 Error</span></a></li>
-											</ul>
-										</li>
-										<li><a href="testimonial.html" class="dropdown-item"><span>Testimonials</span></a></li>
-										<li><a href="pricing.html" class="dropdown-item"><span>Our Pricing</span></a></li>
+										<li><a href="https://backoffice.piepaid.id/" class="dropdown-item"><span>Backoffice</span></a></li>
+										<li><a href="https://pos.piepaid.id/" class="dropdown-item"><span>POS (Point Of Sales)</span></a></li>
+										<li><a href="https://stock.piepaid.id/" class="dropdown-item"><span>Stock Keeper</span></a></li>
+										<li><a href="https://opname.piepaid.id/" class="dropdown-item"><span>Opname</span></a></li>
 									</ul>
 								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Portfolio</a>
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+										integration</a>
 									<ul class="dropdown-menu">
-										<li><a href="portfolio-V1.html" class="dropdown-item"><span>Portfolio 3 Column</span></a></li>
-										<li><a href="portfolio-V2.html" class="dropdown-item"><span>Portfolio 2 Column</span></a></li>
-										<li><a href="portfolio-V3.html" class="dropdown-item"><span>Portfolio Masonry</span></a></li>
-										<li><a href="portfolio-details-V1.html" class="dropdown-item"><span>Single Portfolio</span></a></li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Payment</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>Midtrans</span></a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Printer</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>Rawbt</span></a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Pajak</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>Pajak.io</span></a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Ojek Online</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>Grab</span></a></li>
+												<li><a href="/" class="dropdown-item"><span>Gojek</span></a></li>
+												<li><a href="/" class="dropdown-item"><span>Maxim</span></a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Kurir</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>JNE</span></a></li>
+												<li><a href="/" class="dropdown-item"><span>JNT</span></a></li>
+											</ul>
+										</li>
+										<li class="dropdown-submenu dropdown">
+											<a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" href="#"><span>Marketpleace</span></a>
+											<ul class="dropdown-menu">
+												<li><a href="/" class="dropdown-item"><span>Shoope</span></a></li>
+												<li><a href="/" class="dropdown-item"><span>Tokopedia</span></a></li>
+											</ul>
+										</li>
 									</ul>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/" role="button">Price</a>
+								</li>
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Blog</a>
+									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">FAQs</a>
 									<ul class="dropdown-menu">
-										<li><a href="blog-V1.html" class="dropdown-item"><span>Grid Layout</span></a></li>
-										<li><a href="blog-V2.html" class="dropdown-item"><span>Grid With Sidebar</span></a></li>
-										<li><a href="blog-V3.html" class="dropdown-item"><span>Blog Masonary</span></a></li>
-										<li><a href="blog-V4.html" class="dropdown-item"><span>Blog Standard</span></a></li>
-										<li><a href="blog-details.html" class="dropdown-item"><span>Blog Details</span></a></li>
+										<li><a href="/" class="dropdown-item"><span>Berlangganan</span></a></li>
+										<li><a href="/" class="dropdown-item"><span>Oprasikan Backoffice</span></a></li>
+										<li><a href="/" class="dropdown-item"><span>Oprasikan POS</span></a></li>
+										<li><a href="/" class="dropdown-item"><span>Setting Printer</span></a></li>
 									</ul>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="contact-us.html" role="button">Contact</a>
-								</li> -->
+								</li>
 							</ul>
 							<!-- Mobile Content -->
 							<div class="mobile-content d-block d-lg-none">
@@ -240,6 +254,7 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 
 
 
+
 		<!-- 
 			=============================================
 				Feature Section One
@@ -250,11 +265,11 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 				<div class="row">
 					<div class="col-xl-4 col-lg-4">
 						<div class="title-style-one">
-							<div class="sc-title">New</div>
+							<div class="sc-title">Info</div>
 							<h2 class="main-title">Web Apps</h2>
 						</div> <!-- /.title-style-one -->
 						<p class="sub-heading mt-25 mb-50 md-mb-20">Semua Web Apps Kami Yang Bisa Anda Gunakan</p>
-						<div class="btn-three">Lebih Lengkap. <a href="service-V2.html">Click Ini <i class="fas fa-chevron-right"></i></a></div>
+						<div class="btn-three">Lebih Lengkap. <a href="/">Click Ini <i class="fas fa-chevron-right"></i></a></div>
 					</div>
 				</div>
 			</div> <!-- /.container -->
@@ -264,28 +279,28 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 						<div class="block-style-one text-center">
 							<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="images/icon/icon_02.svg" alt="" class="m-auto"></div>
 							<h5 class="mb-40">Backoffice</h5>
-							<a href="service-details-V1.html" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
+							<a href="/" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
 						</div> <!-- /.block-style-one -->
 					</div> <!-- /.item -->
 					<div class="item">
 						<div class="block-style-one text-center">
 							<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="images/icon/icon_03.svg" alt="" class="m-auto"></div>
 							<h5 class="mb-40">Point Of Sales</h5>
-							<a href="service-details-V1.html" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
+							<a href="/" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
 						</div> <!-- /.block-style-one -->
 					</div> <!-- /.item -->
 					<div class="item">
 						<div class="block-style-one text-center">
 							<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="images/icon/icon_04.svg" alt="" class="m-auto"></div>
 							<h5 class="mb-40">Stock Keeper</h5>
-							<a href="service-details-V1.html" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
+							<a href="/" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
 						</div> <!-- /.block-style-one -->
 					</div> <!-- /.item -->
 					<div class="item">
 						<div class="block-style-one text-center">
 							<div class="icon d-flex align-items-end justify-content-center mb-50 lg-mb-30"><img src="images/icon/icon_03.svg" alt="" class="m-auto"></div>
 							<h5 class="mb-40">Opname</h5>
-							<a href="service-details-V1.html" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
+							<a href="/" class="btn-two">Lebih Lengkap <i class="fas fa-chevron-right"></i></a>
 						</div> <!-- /.block-style-one -->
 					</div> <!-- /.item -->
 				</div>
@@ -305,13 +320,13 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 					<div class="col-xl-5 col-lg-6 col-md-7 ms-auto">
 						<div class="block-style-two" data-aos="fade-left">
 							<div class="title-style-one">
-								<div class="sc-title">More ++</div>
+								<div class="sc-title">Info</div>
 								<h2 class="main-title">Apakah Keunggulannya?</h2>
 							</div> <!-- /.title-style-one -->
 							<p class="pt-10 pb-20 lg-pb-10">Semua Transaksi Lebih Mudah. Murah Dan Terbaik Diindonesia.</p>
 							<ul class="style-none list-item">
 								<li>Realtime Report.</li>
-								<li>Print Struk Terintegrasi.</li>
+								<li>Print Struk Instan.</li>
 								<li>Support Resep & HPP.</li>
 								<li>Shift Kasir.</li>
 								<li>Masih Banyak Lagi.</li>
@@ -347,19 +362,24 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 						<div class="col-md-4 col-sm-6" data-aos="fade-up">
 							<div class="counter-block-one text-center mb-20">
 								<div class="main-count"><span class="counter">1</span> Tahun</div>
-								<p>Free Pengujian di 4 Restoran <br> Bengkulu</p>
+								<p>Pengujian Pengembangan<br> di 4 Restoran Bengkulu</p>
 							</div> <!-- /.counter-block-one -->
 						</div>
 						<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
 							<div class="counter-block-one text-center mb-20">
-								<div class="main-count"><span class="counter">135</span> Trial</div>
-								<p>Dibuat Pengguna <br>Piepiad</p>
+								<div class="main-count"><span class="counter"><?= count($users->fetch_all()) ?></span> User</div>
+								<p>Telah Bergabung <br>Bersama Kami</p>
 							</div> <!-- /.counter-block-one -->
 						</div>
 						<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
 							<div class="counter-block-one text-center mb-20">
-								<div class="main-count"><span class="counter">2</span> Server</div>
-								<p>Telah Diuji Dibeberapa<br> Server Indonesia</p>
+								<div class="main-count"><span class="counter"><?php
+																				$jtran = count($transaksi->fetch_all());
+																				if ($jtran > 999) {
+																					echo substr($jtran, 0, -3);
+																				}
+																				?></span>k Bill</div>
+								<p>Transaksi <br> Oleh Pengguna Kami</p>
 							</div> <!-- /.counter-block-one -->
 						</div>
 					</div>
@@ -373,7 +393,8 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 			=============================================
 				Feature Section Three
 			============================================== 
-			-->
+			-->===========
+		-->
 		<div class="fancy-feature-three position-relative">
 			<div class="container">
 				<div class="row align-items-center">
@@ -383,7 +404,7 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 								<div class="sc-title">Promise</div>
 								<h2 class="main-title">Join Bersama Kami, Dijamin Tidak Rugi.</h2>
 							</div> <!-- /.title-style-one -->
-							<p class="pt-20 pb-30 lg-pb-10">Tim Developer Kami Telah Turun Lapangan Langsung Selama 1 Tahun, Untuk Menyesuaikan Kebutuhan Anda. Dan Nikmati Update Fitur Bekelanjutan</p>
+							<p class="pt-20 pb-30 lg-pb-10">Tim Developer Kami Telah Turun Lapangan Langsung Selama 1 Tahun, Untuk Menyesuaikan Kebutuhan Anda Dan Nikmati Update Fitur Bekelanjutan</p>
 							<ul class="style-none button-group d-lg-flex align-items-center">
 								<li class="me-4"><a href="https://backoffice.piepaid.id/" class="btn-one ripple-btn">Gabung</a></li>
 							</ul>
@@ -512,8 +533,7 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 					</div>
 				</div> <!-- /.slider-wrapper -->
 			</div>
-		</div>
-		<!-- /.portfolio-gallery-one -->
+		</div> <!-- /.portfolio-gallery-one -->
 
 
 
@@ -551,18 +571,78 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 								<?php
 
 								while ($value = mysqli_fetch_array($plans_paket)) {
-									if ($value['id'] != 1 && $value['id'] < 4) {
+									$harga = substr($value['harga'], 0, -3);
+
+									if ($value['waktu_satuan'] == 'Days') {
+										$waktusatuan = $value['waktu'] . ' Hari';
+									} else {
+										$waktusatuan = '30 Hari';
+									}
 								?>
-										<div class="col-md-6">
-											<div class="pr-table-wrapper active md-mb-30">
+									<div class="col-md-3">
+										<div class="pr-table-wrapper active md-mb-30">
+											<div class="pack-name"><?= $value['nama'] ?></div>
+											<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $waktusatuan  ?></span></div>
+											<div class="top-banner d-sm-flex justify-content-center align-items-center">
+												<div class="price" style="font-size: 30px;"><sup style="font-size: 10px;">Rp. </sup><?= $harga ? $harga : 0 ?>k</div>
+												<div>
+													<span>/<?= $waktusatuan   ?></span>
+												</div>
+												<br>
+											</div> <!-- /.top-banner -->
+											<ul class="pr-feature style-none">
+												<?php
+												$fitur = json_decode($value['ket'], true);
+												foreach ($fitur as $v) {
+												?>
+													<li><?= $v ?></li>
+												<?php
+												} ?>
+											</ul>
+											<?php if ($value['status'] == 1) { ?>
+												<a href="https://backoffice.piepaid.id/" class="trial-button"> <span>Pilih Plans <i class="fas fa-chevron-right"></i></span> </a>
+											<?php } ?>
+										</div> <!-- /.pr-table-wrapper -->
+									</div>
+								<?php
+								} ?>
+							</div>
+						</div>
+
+						<div class="tab-pane" id="year">
+							<div class="row gx-xxl-5">
+
+								<?php
+								while ($value = mysqli_fetch_array($plans_paket1)) {
+									$wkt = 12;
+									if ($value['id'] != 1) {
+										if ($value['disc']) {
+											$disc = json_decode($value['disc'], true);
+											if ($disc['waktu'] >= $wkt) {
+												$disc = substr((($value['harga'] * $wkt) - ((($value['harga'] * $wkt)) * $disc['disc']) / 100), 0, -3);
+											}
+										} else {
+											$disc = '';
+										}
+										$harga = substr($value['harga'] * $wkt, 0, -3);
+
+										if ($value['waktu_satuan'] == 'Days') {
+											$waktusatuan =  '1 Tahun' . $disc;
+										} else {
+											$waktusatuan = '1 Tahun';
+										}
+								?>
+										<div class="col-md-4">
+											<div class="pr-table-wrapper md-mb-30">
 												<div class="pack-name"><?= $value['nama'] ?></div>
-												<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $value['waktu'] . ' ' . $value['waktu_satuan'] ?></span></div>
+												<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $waktusatuan  ?></span></div>
 												<div class="top-banner d-sm-flex justify-content-center align-items-center">
-													<div class="price"><sup>Rp. </sup><?= substr($value['harga'], 0, -3) ?>k</div>
-													<div>
-														<span>Membership 1 Bulan</span>
-														<em>Mulai dari <?= substr($value['harga'], 0, -3) ?>k/bulan dapatkan </em>
+													<div class="price" style="font-size: 35px;"><sup style="font-size: 10px;">Rp. </sup><small style="text-decoration: line-through;font-size: 20px;"><?= $harga ? $harga : 0 ?>k</small> <br><sup style="font-size: 10px;">Rp. </sup><?= $disc ?>k
 													</div>
+													<div>
+														<span>/<?= $waktusatuan   ?></span>
+													</div>
+													<br>
 												</div> <!-- /.top-banner -->
 												<ul class="pr-feature style-none">
 													<?php
@@ -573,43 +653,13 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 													<?php
 													} ?>
 												</ul>
-												<a href="pricing.html" class="trial-button"> <span>Pilih Plans <i class="fas fa-chevron-right"></i></span> </a>
+												<?php if ($value['status'] == 1) { ?>
+													<a href="https://backoffice.piepaid.id/" class="trial-button"> <span>Pilih Plans <i class="fas fa-chevron-right"></i></span> </a>
+												<?php } ?>
 											</div> <!-- /.pr-table-wrapper -->
 										</div>
-								<?php }
-								} ?>
-							</div>
-						</div>
-
-						<div class="tab-pane" id="year">
-							<div class="row gx-xxl-5">
-
 								<?php
-
-								print_r($value1 = mysqli_fetch_assoc($plans_paket));
-								while ($value1 = mysqli_fetch_assoc($plans_paket)) {
-									if ($value1['id'] != 1 && $value1['id'] < 4) {
-								?>
-										<div class="col-md-6">
-											<div class="pr-table-wrapper active md-mb-30">
-												<div class="pack-name">Business</div>
-												<div class="pack-details">For individuals and teams. Get <span>2 year <br> premium market access</span></div>
-												<div class="top-banner d-sm-flex justify-content-center align-items-center">
-													<div class="price"><sup>$</sup>69</div>
-													<div>
-														<span>Yearly membership</span>
-														<em>Starting at $69/mo with </em>
-													</div>
-												</div> <!-- /.top-banner -->
-												<ul class="pr-feature style-none">
-													<li>Unlimited campaigns</li>
-													<li>Push Notifications</li>
-													<li>Team fundraising</li>
-												</ul>
-												<a href="pricing.html" class="trial-button">Try us without risk. <span>Choose plan <i class="fas fa-chevron-right"></i></span> </a>
-											</div> <!-- /.pr-table-wrapper -->
-										</div>
-								<?php }
+									}
 								} ?>
 							</div>
 						</div>
@@ -618,7 +668,154 @@ $plans_paket = mysqli_query($con, 'SELECT * FROM plans_paket');
 					<div class="msg-note mt-80 lg-mt-50" data-aos="fade-up">If you Need any Custom or others Pricing System. <br> Please <a href="contact-us.html">Send Message</a></div>
 				</div>
 			</div> <!-- /.pricing-table-area-one -->
-		</div> <!-- /.pricing-section-one -->
+		</div><!-- /.pricing-section-one -->
+
+
+
+		<!--
+			=====================================================
+				Feedback Slider One
+			=====================================================
+			-->
+		<div class="feedback-section-one mt-130 lg-mt-100">
+			<div class="container">
+				<div class="title-style-one text-center" data-aos="fade-up">
+					<div class="sc-title">TESTIMONIALS</div>
+					<h2 class="main-title">Owner Dari Pelanggan Kami</h2>
+				</div> <!-- /.title-style-one -->
+			</div> <!-- /.container -->
+			<div class="inner-content mt-150 lg-mt-80">
+				<div class="slider-wrapper">
+					<div class="feedback_slider_one">
+						<div class="item">
+							<div class="feedback-block-one">
+								<div class="top-header d-flex align-items-center justify-content-between">
+									<div>
+										<img src="images/logo/Plogo-1.png" alt="">
+										<ul class="style-none d-flex rating pt-15">
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+										</ul>
+									</div>
+									<img src="images/icon/icon_05.svg" alt="" width="50">
+								</div> <!-- /.top-header -->
+								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="cost"><span>Qulaity & Cost:</span> 5.00</div>
+									<img src="images/logo/Plogo-5.png" alt="">
+								</div>
+							</div> <!-- /.feedback-block-one -->
+						</div>
+						<div class="item">
+							<div class="feedback-block-one">
+								<div class="top-header d-flex align-items-center justify-content-between">
+									<div>
+										<img src="images/logo/Plogo-2.png" alt="">
+										<ul class="style-none d-flex rating pt-15">
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+										</ul>
+									</div>
+									<img src="images/icon/icon_05.svg" alt="" width="50">
+								</div> <!-- /.top-header -->
+								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="cost"><span>Qulaity & Cost:</span> 35.00</div>
+									<img src="images/logo/Plogo-5.png" alt="">
+								</div>
+							</div> <!-- /.feedback-block-one -->
+						</div>
+						<div class="item">
+							<div class="feedback-block-one">
+								<div class="top-header d-flex align-items-center justify-content-between">
+									<div>
+										<img src="images/logo/Plogo-3.png" alt="">
+										<ul class="style-none d-flex rating pt-15">
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+										</ul>
+									</div>
+									<img src="images/icon/icon_05.svg" alt="" width="50">
+								</div> <!-- /.top-header -->
+								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="cost"><span>Qulaity & Cost:</span> 19.00</div>
+									<img src="images/logo/Plogo-5.png" alt="">
+								</div>
+							</div> <!-- /.feedback-block-one -->
+						</div>
+						<div class="item">
+							<div class="feedback-block-one">
+								<div class="top-header d-flex align-items-center justify-content-between">
+									<div>
+										<img src="images/logo/Plogo-4.png" alt="">
+										<ul class="style-none d-flex rating pt-15">
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+											<li><i class="bi bi-star-fill"></i></li>
+										</ul>
+									</div>
+									<img src="images/icon/icon_05.svg" alt="" width="50">
+								</div> <!-- /.top-header -->
+								<p>Certainly from my perspective quis been a great success with due WP giving us that enterprises level assured quality.</p>
+								<div class="d-flex align-items-center justify-content-between">
+									<div class="cost"><span>Qulaity & Cost:</span> 15.00</div>
+									<img src="images/logo/Plogo-5.png" alt="">
+								</div>
+							</div> <!-- /.feedback-block-one -->
+						</div>
+					</div> <!-- /.feedback_slider_one -->
+				</div> <!-- /.slider-wrapper -->
+			</div> <!-- /.inner-content -->
+		</div> <!-- /.feedback-section-one -->
+
+
+
+		<!--
+			=====================================================
+				Partner Section One
+			=====================================================
+			-->
+		<div class="partner-section-one">
+			<div class="container">
+				<div class="title-style-one text-center" data-aos="fade-up">
+					<div class="sc-title">Info</div>
+					<h2 class="main-title md">Integration </h2>
+				</div> <!-- /.title-style-one -->
+
+				<div class="row">
+					<div class="col-xxl-11 m-auto">
+						<ul class="style-none text-center mt-40 lg-mt-10">
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/midtrans.png" width="70px" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="100"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/rawbt.png" width="70px" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="200"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-8.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="300"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-9.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="400"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-10.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="100"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-11.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="200"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-12.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="300"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-13.png" alt=""></a></li>
+							<li class="partner-logo-block-one d-inline-block" data-aos="fade-up" data-aos-delay="400"><a href="#" class="d-flex align-items-center justify-content-center"><img src="images/logo/Plogo-14.png" alt=""></a></li>
+						</ul>
+					</div>
+				</div>
+			</div> <!-- /.container -->
+		</div> <!-- /.partner-section-one -->
+
+
+
+
+
 
 		<!--
 			=====================================================
