@@ -831,34 +831,31 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 
 
-
-		<!-- Optional JavaScript _____________________________  -->
-
-		<!-- jQuery first, then Bootstrap JS -->
-		<!-- jQuery -->
-		<script src="vendor/jquery.min.js"></script>
-		<!-- Bootstrap JS -->
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- AOS js -->
-		<script src="vendor/aos-next/dist/aos.js"></script>
-		<!-- Slick Slider -->
-		<script src="vendor/slick/slick.min.js"></script>
-		<!-- js Counter -->
-		<script src="vendor/jquery.counterup.min.js"></script>
-		<script src="vendor/jquery.waypoints.min.js"></script>
-		<!-- Fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
-
-		<!-- Theme js -->
-		<script src="js/theme.js"></script>
-
 		<style>
+			::-webkit-scrollbar-thumb {
+				background: #977e13;
+				border-radius: 10px;
+				;
+			}
+
 			body {
 				background-color: #1c152a;
 			}
 
-			.navbar-collapse {
+			.menu-search-btn:hover {
+				background-color: #1f1b27;
+			}
+
+			.theme-search-form.bg-three {
+				background-color: #1f1b27;
+			}
+
+			.navbar-collapse.show {
 				background-color: #17131f;
+			}
+
+			.navbar .dropdown-menu {
+				background-color: #1f1b27;
 			}
 
 			.ctn-preloader {
@@ -939,6 +936,27 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 			} */
 		</style>
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="vendor/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- AOS js -->
+		<script src="vendor/aos-next/dist/aos.js"></script>
+		<!-- Slick Slider -->
+		<script src="vendor/slick/slick.min.js"></script>
+		<!-- js Counter -->
+		<script src="vendor/jquery.counterup.min.js"></script>
+		<script src="vendor/jquery.waypoints.min.js"></script>
+		<!-- Fancybox -->
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script>
+
 	</div> <!-- /.main-page-wrapper -->
 </body>
 
