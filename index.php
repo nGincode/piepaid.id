@@ -619,10 +619,14 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 										if ($value['disc']) {
 											$disc = json_decode($value['disc'], true);
 											if ($disc['waktu'] >= $wkt) {
+												$jdis = $disc['disc'];
 												$disc = substr((($value['harga'] * $wkt) - ((($value['harga'] * $wkt)) * $disc['disc']) / 100), 0, -3);
+											} else {
+												$jdis = null;
 											}
 										} else {
 											$disc = '';
+											$jdis = null;
 										}
 										$harga = substr($value['harga'] * $wkt, 0, -3);
 
@@ -637,7 +641,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 												<div class="pack-name"><?= $value['nama'] ?></div>
 												<div class="pack-details"><?= $value['info'] ?> <span><br> <?= $waktusatuan  ?></span></div>
 												<div class="top-banner d-sm-flex justify-content-center align-items-center">
-													<div class="price" style="font-size: 35px;"><sup style="font-size: 10px;">Rp. </sup><small style="text-decoration: line-through;font-size: 20px;"><?= $harga ? $harga : 0 ?>k</small> <br><sup style="font-size: 10px;">Rp. </sup><?= $disc ?>k
+													<div class="price" style="font-size: 35px;"><sup style="font-size: 10px;">Rp. </sup><small style="text-decoration: line-through;font-size: 20px;"><?= $harga ? $harga : 0 ?>k </small> <sup style="font-size: 10px;"> &nbsp;<?= $jdis ? '-' . $jdis . '%' : '' ?> </sup><br><sup style="font-size: 10px;">Rp. </sup><?= $disc ?>k
 													</div>
 													<div>
 														<span>/<?= $waktusatuan   ?></span>
@@ -908,6 +912,10 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 			.portfolio-block-one:before {
 				background: linear-gradient(180deg, rgba(24, 52, 123, 0) 0%, rgba(48, 46, 160, 0.08) 56.67%, #6b7500 100%);
+			}
+
+			.address-section-one .inner-content {
+				background-color: #ffd7008a;
 			}
 		</style>
 	</div> <!-- /.main-page-wrapper -->
