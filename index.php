@@ -4,6 +4,7 @@ include('koneksi.php');
 $plans_paket = mysqli_query($db1, 'SELECT * FROM plans_paket');
 $plans_paket1 = mysqli_query($db1, 'SELECT * FROM plans_paket');
 $users = mysqli_query($db1, 'SELECT * FROM users');
+$users1 = mysqli_query($db1, 'SELECT * FROM users');
 $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 
 ?>
@@ -123,9 +124,8 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 								<li class="d-block d-lg-none">
 									<div class="logo"><a href="index.html"><img src="images/logo/logo.png" alt="" width="130"></a></div>
 								</li>
-								<li class="nav-item active dropdown">
-									<a class="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Home</a>
-
+								<li class="nav-item">
+									<a class="nav-link" href="/" role="button">Home</a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Apps</a>
@@ -827,7 +827,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 				<div class="row">
 					<div class="col-xl-8 col-lg-7 col-md-9 m-auto">
 						<div class="title-style-one text-center mb-50" data-aos="fade-up">
-							<div class="sc-title-two">Masih Pakai Transaksi Manual?</div>
+							<div class="sc-title">Masih Pakai Transaksi Manual?</div>
 							<h2 class="main-title">Gabung Bersama Kami, Rasakan Sendiri Kemudahannya</h2>
 						</div> <!-- /.title-style-one -->
 						<div class="text-center" data-aos="fade-up" data-aos-delay="150"><a href="contact-us.html" class="btn-four ripple-btn">Mulai <i class="fas fa-chevron-right"></i></a></div>
@@ -885,13 +885,12 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 							</ul>
 						</div>
 						<div class="col-lg-2 col-md-3 col-sm-6 mb-30">
-							<h5 class="footer-title">Links</h5>
+							<h5 class="footer-title">Apps</h5>
 							<ul class="footer-nav-link style-none">
-								<li><a href="">Home</a></li>
-								<li><a href="">Pricing</a></li>
-								<li><a href="">About us</a></li>
-								<li><a href="">Service</a></li>
-								<li><a href="">Blog</a></li>
+								<li><a href="">Backoffice</a></li>
+								<li><a href="">POS (Point Of Sales)</a></li>
+								<li><a href="">Stock Keeper</a></li>
+								<li><a href="">Opname</a></li>
 							</ul>
 						</div>
 						<div class="col-xl-2 col-md-3 col-sm-6 mb-30">
@@ -906,7 +905,7 @@ $transaksi = mysqli_query($db2, 'SELECT * FROM pos_transaksi');
 						<div class="col-xl-5 col-lg-4 col-md-6 mb-30">
 							<div class="newsletter ps-xl-5">
 								<h5 class="footer-title">Subscribe </h5>
-								<p>Sudah <span>100</span> Orang Subscribe</p>
+								<p>Sudah <span><?= count($users1->fetch_all()) ?></span> Orang Gabung, Tinggal Anda</p>
 								<form action="#">
 									<input type="email" placeholder="Enter your email">
 									<button>Sign Up</button>
